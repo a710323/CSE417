@@ -1,0 +1,158 @@
+%
+% CSE Electronic Homework Template
+% Last modified 8/23/2018 by Jeremy Buhler
+
+\documentclass[11pt]{article}
+\usepackage[left=0.7in,right=0.7in,top=1in,bottom=0.7in]{geometry}
+\usepackage{fancyhdr} % for header
+\usepackage{graphicx} % for figures
+\usepackage{amsmath}  % for extended math markup
+\usepackage{amssymb}
+\usepackage[bookmarks=false]{hyperref} % for URL embedding
+\usepackage[noend]{algpseudocode} % for pseudocode
+\usepackage[plain]{algorithm} % float environment for algorithms
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% STUDENT: modify the following fields to reflect your
+% name/ID, the current homework, and the current problem number
+
+% Example: 
+%\newcommand{\StudentName}{Jeremy Buhler}
+%\newcommand{\StudentID{123456}
+
+\newcommand{\StudentName}{Ming-Che Teng, Jingru Hu}
+\newcommand{\StudentID}{466303, 466024}
+\newcommand{\HomeworkNumber}{5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You can pretty much leave the stuff up to the next line of %%'s alone.
+
+% create header and footer for every page
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{\StudentName}}
+\chead{\textbf{\StudentID}}
+\rhead{\textbf{Assignment \HomeworkNumber}}
+\cfoot{\thepage}
+
+% preferred pseudocode style
+\algrenewcommand{\algorithmicprocedure}{}
+\algrenewcommand{\algorithmicthen}{}
+
+% ``do { ... } while (cond)''
+\algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}%
+
+% ``for (x in y ... z)''
+\newcommand{\ForRange}[3]{\For{#1 \textbf{in} #2 \ \ldots \ #3}}
+
+% these are common math formatting commands that aren't defined by default
+\newcommand{\union}{\cup}
+\newcommand{\isect}{\cap}
+\newcommand{\ceil}[1]{\ensuremath \left\lceil #1 \right\rceil}
+\newcommand{\floor}[1]{\ensuremath \left\lfloor #1 \right\rfloor}
+\newcommand*{\Perm}[2]{{}^{#1}\!P_{#2}}%
+\newcommand*{\Comb}[2]{{}^{#1}C_{#2}}%
+\newcommand*{\Int}{\int\limits}
+\usepackage{listings}
+\usepackage{color}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\subsection * {Problems}
+
+\begin{enumerate}
+
+\item [\textbf{1.}]  
+
+Article: Academics Confirm Major Predictive Policing Algorithm is Fundamentally Flawed
+
+Academics confirms that a major predictive policing algorithm is fundamentally flawed. The reason is the training data that this algorithm used is based on imperfect and cannot represent the whole crime data. The algorithm is inspired by statistical modeling method used to predict earthquakes but the key difference between earthquake and crime is that we basically can observe and obtain the earthquake data but not all crime activities are reported.
+
+Article: A computer program used for bail and sentencing decisions was labeled biased against blacks. It’s actually not that clear.
+
+There's a debate about a computer program that used for bail and sentencing decision was considered biased against blacks as among the defendant who ultimately didn't reoffend, blacks were more than 2 as likely as white to be classified as medium or high risk. However, Northpointe stated that given a risk score, regardless the race, 60 percent of white defendants reoffended, 61 percent of black defendants reoffended. On this point of view, this tool is fair. We cannot be fair in both way.
+
+Article: Automating Bias
+
+Even using an online, automating algorithm, the process can be built based on designers assumptions. The first difficulty that this article mentioned was it's hard to make sure that all the families received all the benefits they were entitled to. An online application can be hard to apply for the poor families since they didn't have access to internet. Another problem is the data they relied on are only the people who reach out to public service for family support. It can skewed the algorithm too much because of oversurveillance.  
+
+\item[\textbf{2.}]
+
+We are surprised that in order to let the machine to learn a model, we should extremely carefully justify the data we have. If the way of collecting the training data cannot represent the population, then the model would have the issue the first article mentioned and even the issue that the article "Automating Bias" raised. 
+
+\item[\textbf{3.}]
+
+We're struggling that fact that we cannot find a better way to define fairness. As the second article mentioned it's impossible to satisfy two fairness standards simultaneously. And we had a debate about which standard raised by Northpointe and ProPublica is more robust than the other. It turned out that there's no definite conclusion for this answer.
+
+\item[\textbf{4.}]
+
+We believe that the the most important ethical issue in the use of machine learning raised in these articles is can we be fair even if we only have imperfect training data. Our thought is inspired by the policing and defendant articles. Since we can only observe the data that was generated by human bias, is there a chance that we can use them to train an algorithm? Like the first article mentioned, we can only have the report records once they were been filed. And the same issue in the second article, people must be identified and reported to be a defendant. Under this circumstance, we still need to achieve the goal that, at least in one fairness standard, our model doesn't skew to a certain group's favor. 
+
+This issue would have impact to any of us. If police officers are not going to patrolling our neighbor simply because a flawed algorithm told them this our area is safe but actually it's not, our neighbor might be in danger. And if an algorithm tends to use harsher treatment to the blacks, that can be interpreted as the algorithm treats white nicely and may have negative impact to our society.
+
+\item[\textbf{5.}]
+
+In class, we mentioned three fairness standard. 
+
+Anti-classification: The first one is the result should be the same for any two data points the unprotected features are the same. 
+
+Classification parity:
+
+The second one is that the result should be the same no matter the protected characteristics are, and the false positive rate should also be them same regardless protected characteristics. 
+
+Calibration:
+
+The third one is calibration, given the predicted result, the unprotected characteristics will not have any effect on the probability of the true value equals to a certain number.
+
+We can focus on the issue we presented in \texttt{problem 4.} Even if with imperfect data, we still need to give a fair model. But the thing is there are three fairness definition, which one we would like to use? As stated in second article, \texttt{Northpointe} did not use \texttt{race} as input variable, so based on our opinion, it should satisfy the first fairness standard, that is, anti-classification. But then someone still points out that the people who ultimately didn't reoffend, blacks were more than twice as likely as white to be classified as medium or high risk. This represented the algorithm didn't satisfy the \texttt{Calibration}. But according to the designer, the model did meet the criteria of \texttt{classification parity}, that is, no matter defendant's race, the model labeled them fairly.
+
+We conclude that there's no way to satisfy more than 1 notions in practice. Here's simple proof. Suppose we have 2 subgroups, \texttt{A} and \texttt{B}. \texttt{A} has higher reoffending rate than \texttt{B}. And there are two categories, \texttt{High} and \texttt{Low}. In order to let \texttt{High} category has higher reoffending rate, we need to put more \texttt{A} into \texttt{High} category, which means there's no way get equal for false positive rate in \texttt{High} and \texttt{Low}.
+
+And even if we can satisfy more notions, there's must be some results can be identified as unfairness. So satisfying one or more than those notions cannot resolve these problems.
+
+\item[\textbf{6.}]
+
+We would probably just follow the instructions we have. We'll not use protected features in our model, including race, gender, age, and etc.
+
+\item[\textbf{7.}]
+
+The issue is a dilemma, depending on what we want to present then there's a different way to measure fairness. Our way is to not using protected features and let our algorithm learn a model. If that contains some result can be considered unfair, we'll reexamine our hypothesis. 
+
+The relevant decision makers is obviously our boss or supervisors XDD. After we assure that there's no protected features in our model, then the most important remaining issue would be whether our way to build the algorithm contains our assumptions that we are not realized. As the automating bias article mentioned during designing an algorithm, there's a chance that designers program our assumptions into the tool and hide consequential choices behind a math-washed facade. 
+
+We think our way to communicate with them is elaborating the design of the tool and carefully scrutinizing the fairness standard. 
+
+The technical part is can we find a way to have the dataset that can represent the population. We postulate it's the most important thing since our model would be based on the training dataset. The non-technical part is how can be convince people that our model can do accurate predictions without being unfair to a certain subgroups. That part needs some communications skills and persuasive stories.
+
+
+\end{enumerate}
+\pagebreak
+
+
+\subsection*{Collaboration Statement}
+
+I collaborate this assignment with Jingru Hu, 466024, jingruhu@wustl.edu.
+
+\end{document}
