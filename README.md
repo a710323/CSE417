@@ -1,4 +1,4 @@
-# CSE417
+# CSE417T-Intro to Machine Learning at Washington University in St. Louis (WUSTL)
 
 This is my work of CSE417T at WashU
 
