@@ -1,6 +1,6 @@
 # CSE417
 
-This is my work of CSE417 at WashU
+This is my work of CSE417T at WashU
 
 # Disclaimer:
 
