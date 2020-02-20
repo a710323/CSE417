@@ -1,6 +1,8 @@
 # CSE417T-Intro to Machine Learning at Washington University in St. Louis (WUSTL)
 
-This is my work of CSE417T at WashU
+This is my work of CSE417T at WashU during spring 2019
+
+Note: The course slides are from spring 2020 as the instructor in spring 2019 did not post any course slide.
 
 # Disclaimer:
 
